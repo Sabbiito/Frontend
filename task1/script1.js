@@ -1,28 +1,24 @@
-function generateTable() {
-    const rows = document.getElementById('rows').value;
-    const cols = document.getElementById('cols').value;
+document.getElementById("custom-form").addEventListener("submit", function (event) {
+    let login = document.getElementById("login").value.trim();
+    let password = document.getElementById("password").value;
+    let repeatPassword = document.getElementById("repeat-password").value;
+    let gender = document.querySelector('input[name="gender"]:checked');
+    let city = document.getElementById("city").value;
 
-    if (rows <= 0 || cols <= 0) {
-        alert('Введіть кількість рядків та стовпців.');
-        return;
+    if (login.length < 3) {
+        alert("Логін має містити принаймні 3 символи.");
+        event.preventDefault();
+    } else if (password.length < 6) {
+        alert("Пароль має містити принаймні 6 символів.");
+        event.preventDefault();
+    } else if (password !== repeatPassword) {
+        alert("Паролі не співпадають.");
+        event.preventDefault();
+    } else if (!gender) {
+        alert("Оберіть стать.");
+        event.preventDefault();
+    } else if (!city) {
+        alert("Оберіть місто.");
+        event.preventDefault();
     }
-
-    const tableContainer = document.getElementById('table-container');
-    tableContainer.innerHTML = ''; //видаляєм минулі
-
-    const table = document.createElement('table');
-
-    // додаємо рядочки та стовпці з підписами
-    for (let i = 0; i < rows; i++) {
-        const tr = document.createElement('tr');
-
-        for (let j = 0; j < cols; j++) {
-            const td = document.createElement('td');
-            td.textContent = `Рядок ${i + 1}, Стовпець ${j + 1}`;
-            tr.appendChild(td);
-        }
-        table.appendChild(tr);
-    }
-
-    tableContainer.appendChild(table);
-}
+});
