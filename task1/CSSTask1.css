@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+label {
+    margin-top: 10px;
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+.gender, .interests {
+    margin-top: 5px;
+}
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}

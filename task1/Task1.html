@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSSTask1.css">
+    <title>Форма реєстрації та таблиці</title>
+</head>
+<body>
+<h2>1.1 Генерація таблиці</h2>
+<label for="rows">Кількість рядочків:</label>
+<input type="number" id="rows" min="1">
+
+<label for="cols">Кількість стовпців:</label>
+<input type="number" id="cols" min="1">
+
+<button onclick="generateTable()">Генерувати таблицю</button>
+<div id="table-container"></div>
+
+<h2>1.2 Форма реєстрації</h2>
+<form id="custom-form">
+    <label for="login">Логін:</label>
+    <input type="text" id="login" name="login">
+
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="repeat-password">Повторіть пароль:</label>
+    <input type="password" id="repeat-password" name="repeat-password">
+
+    <label>Стать:</label>
+    <div class="gender">
+        <label><input type="radio" name="gender" value="male"> Чоловік</label>
+        <label><input type="radio" name="gender" value="female"> Жінка</label>
+    </div>
+
+    <label for="city">Вкажіть місто:</label>
+    <select id="city" name="city">
+        <option value="zhytomyr">Житомир</option>
+        <option value="Rivne">Рівне</option>
+        <option value="Khmelnytskyi">Хмельницький</option>
+        <option value="lviv">Львів</option>
+        <option value="kyiv">Київ</option>
+    </select>
+
+    <label>Інтереси:</label>
+    <div class="interests">
+        <label><input type="checkbox" name="interest" value="football"> футбол</label>
+        <label><input type="checkbox" name="interest" value="chess"> Шахи</label>
+        <label><input type="checkbox" name="interest" value="drawing"> Малювання</label>
+        <label><input type="checkbox" name="interest" value="music"> Музика</label>
+    </div>
+
+    <div class="buttons">
+        <button type="reset">Очистити</button>
+        <button type="submit">Відправити</button>
+    </div>
+</form>
+<script src="script1.js"></script>
+</body>
+</html>
