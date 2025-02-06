@@ -1,20 +1,16 @@
-document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const activeHeader = document.querySelector('.accordion-header.active');
+const items = [
+    { title: "Меню Акордеон з HTML", content: "Це контент для акордеона з HTML." },
+    { title: "Акордеон за допомогою CSS", content: "Це контент для акордеона з CSS." },
+    { title: "Меню Акордеон з JavaScript", content: "Це контент для акордеона з JavaScript." },
+    { title: "Акордеон із jQuery", content: "Це контент для акордеона з jQuery." },
+    { title: "Акордеон з Bootstrap 5", content: "Це контент для акордеона з Bootstrap 5." }
+];
 
-        // закриваємо відкритий елемент якшо він є
-        if (activeHeader && activeHeader !== header) {
-            activeHeader.classList.remove('active');
-            activeHeader.nextElementSibling.style.maxHeight = null;
-        }
-
-        // відкриваємо та закриваємо поточний елемент
-        header.classList.toggle('active');
-        const content = header.nextElementSibling;
-        if (header.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-            content.style.maxHeight = null;
-        }
-    });
+const container = document.querySelector(".accordion");
+items.forEach(item => {
+    const div = document.createElement("div");
+    div.classList.add("accordion-item");
+    div.innerHTML = `<div class="accordion-header">${item.title}</div>
+                     <div class="accordion-content"><p>${item.content}</p></div>`;
+    container.appendChild(div);
 });
